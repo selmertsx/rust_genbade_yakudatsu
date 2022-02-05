@@ -1,7 +1,13 @@
 #[derive(Debug)]
 pub struct Customer {
-    pub id: String,
-    pub name: String
+    id: String,
+    name: String
+}
+
+impl Customer {
+    pub fn new(id: String, name: String) -> Self {
+        Self { id, name }
+    }
 }
 
 #[derive(Debug)]
@@ -10,6 +16,10 @@ pub struct Customers {
 }
 
 impl Customers {
+    pub fn new(customers: Vec<Customer>) -> Self {
+        Self { customers }
+    }
+
     pub fn add(mut self, customer: Customer) -> Self {
         self.customers.push(customer);
         self

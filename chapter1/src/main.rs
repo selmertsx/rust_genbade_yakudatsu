@@ -31,9 +31,9 @@ fn main() {
     }
 
     println!("====== Collection Object: Customers =======");
-    let customer_a = Customer { id: "xxx1".to_string(), name: "Mr. A".to_string()};
-    let customer_b = Customer { id: "xxx2".to_string(), name: "Mr. B".to_string()};
-    let customers = Customers { customers: vec![customer_a] };
+    let customer_a = Customer::new("xxx1".to_string(), "Mr. A".to_string());
+    let customer_b = Customer::new("xxx2".to_string(), "Mr. B".to_string());
+    let customers = Customers::new(vec![customer_a]);
     println!("{:?}", customers);
     let added_customers = customers.add(customer_b);
     println!("{:?}", added_customers);
