@@ -22,6 +22,7 @@ impl Customers {
 
     pub fn add(mut self, customer: Customer) -> Self {
         self.customers.push(customer);
-        self
+
+        Self { customers: self.customers }
     }
 }
