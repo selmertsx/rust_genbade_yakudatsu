@@ -34,6 +34,8 @@ fn main() {
     let customer_a = Customer::new("xxx1".to_string(), "Mr. A".to_string());
     let customer_b = Customer::new("xxx2".to_string(), "Mr. B".to_string());
     let customers = Customers::new(vec![customer_a]);
+    println!("{}", customer_b); // 自作のDisplayを試す
+    println!("{:?}", customer_b); // Debug traitの表示を見る
     println!("{:?}", customers);
     let added_customers = customers.add(customer_b);
     println!("{:?}", added_customers);
