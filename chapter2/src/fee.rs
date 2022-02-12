@@ -1,7 +1,7 @@
 #[derive(Debug)]
-struct Yen(u32);
+pub struct Yen(u32);
 
-trait Fee {
+pub trait Fee {
     fn fee() -> Yen;
     fn label() -> String;
 }
