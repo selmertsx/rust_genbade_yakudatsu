@@ -1,11 +1,11 @@
 use crate::fee::Fee;
 
 pub struct Reservation {
-    fees: Vec<Fee>, 
+    fees: Vec<Box<dyn Fee>>, 
 }
 
 impl Reservation {
-    pub fn new(&self, fees: Vec<Fee>) -> Self {
+    pub fn new(&self, fees: Vec<Box<dyn Fee>>) -> Self {
         Self { fees }
     }
 }
