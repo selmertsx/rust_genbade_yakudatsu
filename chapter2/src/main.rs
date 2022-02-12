@@ -1,7 +1,11 @@
 mod fee;
 use fee::{ ChildFee, Fee };
 
+mod reservation;
+use reservation::Reservation;
+
 fn main() {
-    let fee = ChildFee::fee();
+    let fee = ChildFee;
+    let fee = fee.fee();
     println!("{:?}", fee);
 }
