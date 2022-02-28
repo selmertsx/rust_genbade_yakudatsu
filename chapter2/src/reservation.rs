@@ -3,9 +3,9 @@ use crate::fee::{Fee, Yen};
 pub struct ReservationFees(Vec<Box<dyn Fee>>);
 
 impl ReservationFees {
-    pub fn push(&self, fee: Box<dyn Fee>) -> Self {
-        // Self { self.fees }
-        todo!()
+    pub fn push(&mut self, fee: Box<dyn Fee>) {
+        let fees = self.0;
+        fees.push(fee)
     }
 }
 
@@ -18,8 +18,7 @@ impl Reservation {
         Self { fees }
     }
 
-    pub fn addFees(&self, fee: Box<dyn Fee>) -> Self {
+    pub fn addFees(&self, fee: Box<dyn Fee>) {
         self.fees.push(fee);
-        Self { fees }
     }
 }
